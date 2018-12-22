@@ -1,11 +1,3 @@
-# CHALLENGE DESCRIPTION 
-# The function should work with a dictionary instead of a list
-# By default, there are 20 of each coin available, but this can be overriden by passing a new dictionary to the function
-# If a coin that would be used normally to make up an amount is unavailable, the program should attempt to use a smaller coin
-# If it is not possible to make up the amount, the function should raise an error
-
-# Coin denominations are 1, 2, 5, 10, 20, 50, 100
-
 from collections import OrderedDict #Ordered Dict is needed here, as we want the coin denominations to run from highest to lowest in order for the program to try and give out higher coin denominations as change first
 
 products = {
