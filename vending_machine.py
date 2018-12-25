@@ -17,8 +17,8 @@ products = { # Key represents product, value is price
 # Sort ordered dictionaries in reverse order so that the larger denominations are used first to make up the change
 usd = {1:20, 2:20, 5:20, 10:20, 25:20, 50:20, 100:20, 200:20}
 ordered_usd = OrderedDict(sorted(usd.items(), reverse=True))
-eur = {1:20, 2:20, 5:20, 10:20, 20:20, 50:20, 100:20, 200:20}
-ordered_eur = OrderedDict(sorted(eur.items(), reverse=True))
+gbp = {1:20, 2:20, 5:20, 10:20, 20:20, 50:20, 100:20, 200:20}
+ordered_gbp = OrderedDict(sorted(gbp.items(), reverse=True))
 
 # Error Strings
 error_string = "Error: unable to make up amount with available coins"
@@ -26,7 +26,7 @@ error_input_string = "Error: please enter a number corresponding to the product 
 
 
 # Get Change Function
-def get_change(amount, denomination=ordered_eur):  # Default is eur
+def get_change(amount, denomination=ordered_gbp):  # Default is gbp
     change = []  # Initialize empty list
     for coin, quantity in denomination.items():  # Loop through the available coins
         if denomination[coin] == 0:  # If the machine has ran out of a particular coin
@@ -72,7 +72,7 @@ while amount_outstanding > 0:  # While there is still an amount to pay
     print("The amount outstanding is", amount_outstanding)    
     print("Please insert change (You can enter 200, 100, 50, 20, 10, 5, 2, or 1 representing coin denominations): ")
     inserted = int(input())
-    if inserted in eur:  # If the user has entered a valid coin denomination
+    if inserted in gbp:  # If the user has entered a valid coin denomination
         amount_outstanding -= inserted  # Deduct the amount the user has entered from the amount outstanding
     else:
         print("Sorry, the coin you just tried to insert doesn't exist. Please enter an actual coin...")
