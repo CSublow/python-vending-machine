@@ -39,7 +39,8 @@ def get_change(amount, denomination=ordered_eur):  # Default is eur
     if sum(change) < amount:  # If the program has been unable to make up the amount, raise an error
         return error_string
 
-    print("Your change is:", change)  # Print the user's change
+    string_change = [str(a) for a in change]  # Convert the change list into string so that the [] can be removed
+    print("Your change is:", ", ".join(string_change))  # Print the user's change
 
 
 # Begin User Interaction
