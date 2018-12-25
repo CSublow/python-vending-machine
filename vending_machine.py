@@ -63,22 +63,22 @@ while choosing:
         print(error_input_string)
       
 amount_outstanding = list(products[chosen_product].values())[0]  # This gets the value (price) as an int
-product_string = list(products[chosen_product].keys())[0]  # Get the name of the chose product
+product_string = list(products[chosen_product].keys())[0]  # Get the name of the chosen product
 
 print("You have chosen:", product_string)  # Tell the user what they have just chosen
 
-while amount_outstanding > 0:
+while amount_outstanding > 0:  # While there is still an amount to pay
     print("The amount outstanding is", amount_outstanding)    
     print("Please insert change (You can enter 200, 100, 50, 20, 10, 5, 2, or 1 representing coin denominations): ")
     inserted = int(input())
-    if inserted in eur:
+    if inserted in eur:  # If the user has entered a valid coin denomination
         amount_outstanding -= inserted  # Deduct the amount the user has entered from the amount outstanding
     else:
         print("Sorry, the coin you just tried to insert doesn't exist. Please enter an actual coin...")
          
-    print("You have just inserted a", inserted, "cents coin")
+    print("You have just inserted a", inserted, "cents coin")  # Feedback to the user the coin they entered
 
-if amount_outstanding < 0:
-    get_change(-amount_outstanding)
+if amount_outstanding < 0:  # If the user has change due
+    get_change(-amount_outstanding)  # Call get_change and pass in the amount outstanding as a positive number.
 else:
     print("No change! Enjoy your beverage!")
