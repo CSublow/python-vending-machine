@@ -72,7 +72,7 @@ while amount_outstanding > 0:
     print("Please insert change (You can enter 200, 100, 50, 20, 10, 5, 2, or 1 representing coin denominations): ")
     inserted = int(input())
     if inserted in eur:
-        amount_outstanding -= inserted #Deduct the amount the user has entered from the amount outstanding
+        amount_outstanding -= inserted  # Deduct the amount the user has entered from the amount outstanding
     else:
         print("Sorry, the coin you just tried to insert doesn't exist. Please enter an actual coin...")
          
