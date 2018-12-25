@@ -1,6 +1,9 @@
-from collections import OrderedDict #Ordered Dict is needed here, as we want the coin denominations to run from highest to lowest in order for the program to try and give out higher coin denominations as change first
+# Ordered Dict is needed here
+# We want the coin denominations to run from highest to lowest
+# In order for the program to try and give out higher coin denominations as change first
+from collections import OrderedDict
 
-products = {
+products = { # Key represents product, value is price
     1: {"Coca-Cola (Can)":70},
     2: {"Coca-Cola (Bottle)":120}, 
     3: {"Diet Coca-Cola (Can)":70}, 
@@ -11,11 +14,13 @@ products = {
     8: {"Ginger Beer (Can)":90}
 }
 
+# Sort ordered dictionaries in reverse order so that the larger denominations are used first to make up the change
 usd = {1:20, 2:20, 5:20, 10:20, 25:20, 50:20, 100:20, 200:20}
 ordered_usd = OrderedDict(sorted(usd.items(), reverse=True))
 eur = {1:20, 2:20, 5:20, 10:20, 20:20, 50:20, 100:20, 200:20}
-ordered_eur = OrderedDict(sorted(eur.items(), reverse=True)) #Sort ordered dictionary in reverse order so that the larger denominations are used first to make up the change
+ordered_eur = OrderedDict(sorted(eur.items(), reverse=True))
 
+# Error Strings
 error_string = "Error: unable to make up amount with available coins"
 error_input_string = "Error: please enter a number corresponding to the product you want"
 
