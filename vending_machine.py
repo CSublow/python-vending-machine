@@ -50,10 +50,10 @@ for x, y in products.items():  # Display available products to user
 choosing = True
 while choosing:
     print("Select a product (enter number): ")
-    name = input()
-    if name.isdigit():  # If user input is a number
-        name = int(name)  # Make sure the number is an actual int
-        if name in products.keys():  # If that int corresponds to a product key
+    chosen_product = input()
+    if chosen_product.isdigit():  # If user input is a number
+        chosen_product = int(chosen_product)  # Make sure the number is an actual int
+        if chosen_product in products.keys():  # If that int corresponds to a product key
             choosing = False  # Come out of the loop, the user has successfully chosen a product
         else:
             # Else the user has picked a number that doesn't correspond to a product
@@ -62,8 +62,8 @@ while choosing:
     else:  # Else the user hasn't entered a number
         print(error_input_string)
       
-amount_outstanding = list(products[name].values())[0]  # This gets the value (price) as an int
-product_string = list(products[name].keys())[0]
+amount_outstanding = list(products[chosen_product].values())[0]  # This gets the value (price) as an int
+product_string = list(products[chosen_product].keys())[0]
 
 print("You have chosen:", product_string)  # Tell the user what they have just chosen
 
