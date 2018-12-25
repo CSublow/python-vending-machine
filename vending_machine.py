@@ -63,7 +63,7 @@ while choosing:
         print(error_input_string)
       
 amount_outstanding = list(products[chosen_product].values())[0]  # This gets the value (price) as an int
-product_string = list(products[chosen_product].keys())[0]
+product_string = list(products[chosen_product].keys())[0]  # Get the name of the chose product
 
 print("You have chosen:", product_string)  # Tell the user what they have just chosen
 
