@@ -44,7 +44,7 @@ def get_change(amount, denomination=ordered_gbp):  # Default is gbp
 
 
 # Begin User Interaction
-print("Welcome to the Python Vending Machine. Available products:")
+print("Welcome to the Python Vending Machine. Available products:\n")
 
 for x in products:
     for y in products[x]:
@@ -53,7 +53,7 @@ for x in products:
     
 choosing = True
 while choosing:
-    print("Select a product (enter number): ")
+    print("\nSelect a product (enter number): ")
     chosen_product = input()
     if chosen_product.isdigit():  # If user input is a number
         chosen_product = int(chosen_product)  # Make sure the number is an actual int
