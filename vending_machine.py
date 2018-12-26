@@ -79,8 +79,9 @@ while amount_outstanding > 0:  # While there is still an amount to pay
         amount_outstanding -= inserted  # Deduct the amount the user has entered from the amount outstanding
     else:
         print("Sorry, the coin you just tried to insert doesn't exist. Please enter an actual coin...")
-         
-    print("You have just inserted a", inserted, "cents coin")  # Feedback to the user the coin they entered
+
+    # Feedback to the user the coin they entered
+    print("You have just inserted", "£{:,.2f}".format(int(inserted) / 100))
 
 if amount_outstanding < 0:  # If the user has change due
     get_change(-amount_outstanding)  # Call get_change and pass in the amount outstanding as a positive number.
