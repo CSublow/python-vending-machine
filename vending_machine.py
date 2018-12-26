@@ -57,8 +57,8 @@ print("Welcome to the Python Vending Machine. Available products:\n")
 
 for x in products:
     for y in products[x]:
-        # Print the key, followed by ':', followed by the value formatted as currency
-        print(y, ": ", currency_formatter(products[x][y]), sep="")
+        # Print the key, followed by nested key, followed by ':', followed by the value formatted as currency
+        print(x, " - ", y, ": ", currency_formatter(products[x][y]), sep="")
     
 choosing = True
 while choosing:
