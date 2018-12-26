@@ -48,7 +48,8 @@ def get_change(amount, denomination=ordered_gbp):  # Default is gbp
 
 # Currency Formatting Function
 def currency_formatter(arg):
-    "£{:,.2f}".format(int(arg) / 100)
+    result = "£{:,.2f}".format(int(arg) / 100)
+    return result
 
 # BEGIN USER INTERACTION
 print("Welcome to the Python Vending Machine. Available products:\n")
@@ -56,7 +57,7 @@ print("Welcome to the Python Vending Machine. Available products:\n")
 for x in products:
     for y in products[x]:
         # Print the key, followed by ':', followed by the value formatted as currency
-        print(y, ": ", "£{:,.2f}".format(int(products[x][y]) / 100), sep="")
+        print(y, ": ", currency_formatter(products[x][y]), sep="")
     
 choosing = True
 while choosing:
