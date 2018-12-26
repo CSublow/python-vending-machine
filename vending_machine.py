@@ -25,6 +25,8 @@ error_string = "Error: unable to make up amount with available coins"
 error_input_string = "Error: please enter a number corresponding to the product you want"
 
 
+# DEFINE FUNCTIONS
+
 # Get Change Function
 def get_change(amount, denomination=ordered_gbp):  # Default is gbp
     change = []  # Initialize empty list
@@ -44,7 +46,11 @@ def get_change(amount, denomination=ordered_gbp):  # Default is gbp
     print("Your change is:", ", ".join(format_change))  # Print the user's change with commas
 
 
-# Begin User Interaction
+# Currency Formatting Function
+def currency_formatter(arg):
+    "£{:,.2f}".format(int(arg) / 100)
+
+# BEGIN USER INTERACTION
 print("Welcome to the Python Vending Machine. Available products:\n")
 
 for x in products:
