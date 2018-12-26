@@ -15,8 +15,6 @@ products = { # Key represents product, value is price
 }
 
 # Sort ordered dictionaries in reverse order so that the larger denominations are used first to make up the change
-usd = {1:20, 2:20, 5:20, 10:20, 25:20, 50:20, 100:20, 200:20}
-ordered_usd = OrderedDict(sorted(usd.items(), reverse=True))
 gbp = {1:20, 2:20, 5:20, 10:20, 20:20, 50:20, 100:20, 200:20}
 ordered_gbp = OrderedDict(sorted(gbp.items(), reverse=True))
 
@@ -28,7 +26,7 @@ error_input_string = "Error: please enter a number corresponding to the product 
 # DEFINE FUNCTIONS
 
 # Get Change Function
-def get_change(amount, denomination=ordered_gbp):  # Default is gbp
+def get_change(amount, denomination=ordered_gbp):
     change = []  # Initialize empty list
     for coin, quantity in denomination.items():  # Loop through the available coins
         if denomination[coin] == 0:  # If the machine has ran out of a particular coin
