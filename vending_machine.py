@@ -39,7 +39,7 @@ def get_change(amount, denomination=ordered_gbp):  # Default is gbp
     if sum(change) < amount:  # If the program has been unable to make up the amount, raise an error
         return error_string
 
-    format_change = ["£{:,.2f}".format(int(a) / 100) for a in change]  # Convert the change list into string so that the [] can be removed
+    format_change = [str("£{:,.2f}".format(int(a) / 100)) for a in change]  # Convert the change list into string so that the [] can be removed
     print("Your change is:", format_change)  # Print the user's change with commas
 
 
