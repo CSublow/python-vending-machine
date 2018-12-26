@@ -40,7 +40,7 @@ def get_change(amount, denomination=ordered_gbp):  # Default is gbp
         return error_string
 
     string_change = [str(a) for a in change]  # Convert the change list into string so that the [] can be removed
-    print("Your change is:", ", ".join(string_change))  # Print the user's change
+    print("Your change is:", ", ".join(string_change))  # Print the user's change with commas
 
 
 # Begin User Interaction
