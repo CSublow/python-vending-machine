@@ -40,7 +40,7 @@ def get_change(amount, denomination=ordered_gbp):  # Default is gbp
         return error_string
 
     format_change = [str("£{:,.2f}".format(int(a) / 100)) for a in change]  # Convert the change list into string so that the [] can be removed
-    print("Your change is:", format_change)  # Print the user's change with commas
+    print("Your change is:", ", ".join(format_change))  # Print the user's change with commas
 
 
 # Begin User Interaction
