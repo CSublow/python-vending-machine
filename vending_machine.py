@@ -72,7 +72,7 @@ product_string = list(products[chosen_product].keys())[0]  # Get the name of the
 print("You have chosen:", product_string)  # Tell the user what they have just chosen
 
 while amount_outstanding > 0:  # While there is still an amount to pay
-    print("The amount outstanding is", amount_outstanding)    
+    print("The amount outstanding is", "£{:,.2f}".format(int(amount_outstanding) / 100))
     print("Please insert change (You can enter 200, 100, 50, 20, 10, 5, 2, or 1 representing coin denominations): ")
     inserted = int(input())
     if inserted in gbp:  # If the user has entered a valid coin denomination
